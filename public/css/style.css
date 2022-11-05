@@ -1,0 +1,69 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    border-bottom: 2px solid rgba(255, 0, 0, .5);
+}
+
+.flex-items {
+    flex-grow: 1;
+    margin: 0 2px;
+    min-height: 5rem;
+    opacity: 25%;
+}
+
+.box {
+    min-height: 80%;
+    min-width: 5rem;
+    background-color: blue;
+    margin: 5px 1rem;
+}
+
+.box-right {
+    float: right;
+}
+
+.box-left {
+    float: left;
+}
+
+.first-ad {
+    height: 20em;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.ad-item {
+    flex-grow: 1;
+    background-color: blue;
+    height: 100%;
+    width: 25%;
+    margin: 0 2px;
+}
+
+.hero-image {
+    height: 28rem;
+    background-color: beige;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.personal-intro {
+    height: 25rem;
+    display: flex;
+}
+
+.tiny-box {
+    flex-grow: 2;
+    background-color: blue;
+    margin: 0.5rem 1rem;
+}
+
+.big-box {
+    flex-grow: 3;
+    background-color: brown;
+    margin: 0.5rem 1rem;
+}
