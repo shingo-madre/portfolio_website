@@ -1,3 +1,7 @@
+body {
+    background-color: #A99A8E;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -11,13 +15,13 @@ nav {
     flex-grow: 1;
     margin: 0 2px;
     min-height: 5rem;
-    opacity: 25%;
+    /* opacity: 25%; */
 }
 
 .box {
     min-height: 80%;
     min-width: 5rem;
-    background-color: blue;
+    background-color: #BD5F5F;
     margin: 5px 1rem;
 }
 
@@ -39,15 +43,17 @@ nav {
 
 .ad-item {
     flex-grow: 1;
-    background-color: blue;
+    background-color: #BD5F5F;
     height: 100%;
     width: 25%;
     margin: 0 2px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-image {
     height: 28rem;
-    background-color: beige;
+    background-color: #BD5F5F;
     margin: 0 1rem 1rem 1rem;
 }
 
@@ -58,7 +64,7 @@ nav {
 
 .tiny-box {
     flex-grow: 2;
-    background-color: blue;
+    background-color: #BD5F5F;
     margin: 0.5rem 1rem;
 }
 
@@ -67,3 +73,36 @@ nav {
     background-color: brown;
     margin: 0.5rem 1rem;
 }
+
+h2.line {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+ h2 span { 
+     background:#A99A8E; 
+     padding:0 10px; 
+ }
+
+ .border {
+    margin: 2rem 0;
+ }
+
+ .footer-one {
+    height: 7rem;
+    margin: 2rem 1rem 1rem 1rem;
+    background-color: #BD5F5F;
+ }
+
+ .footer-two {
+    height: 5rem;
+    margin: 1rem;
+    background-color: #BD5F5F;
+ }
+
+ .align-center {
+    text-align: center;
+ }
