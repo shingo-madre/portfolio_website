@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const cors = require('cors')
 const routes = require('./routes/routes')
+const multer = require('multer')
 
 require('dotenv').config();
 

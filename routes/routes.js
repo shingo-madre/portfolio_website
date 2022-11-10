@@ -1,13 +1,25 @@
 const express = require('express')
 const router = express.Router()
 const Portfolio = require('../model/model')
+const multer = require('multer')
 
-router.post('/post', async (req, res) => {
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/portfolio_uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+})
+
+var upload = multer({ storage: storage});
+
+router.post('/post',upload.single('image'), async (req, res) => {
     const data = new Portfolio({
         title: req.body.title,
         description: req.body.description,
         author: req.body.author,
-        image: req.body.image,
+        image: req.file.filename,
         year: req.body.year,
         role: req.body.role,
         link: req.body.link
@@ -55,10 +67,20 @@ router.get('/list/:author', async (req, res) => {
     }
 })
 
-router.patch('/update/:_id', async (req, res) => {
+router.patch('/update/:_id', upload.single("image"), async (req, res) => {
     try {
+        const updatedData = new Portfolio({
+            title: req.body.title,
+            description: req.body.description,
+            author: req.body.author,
+            image: req.file.filename,
+            year: req.body.year,
+            role: req.body.role,
+            link: req.body.link
+        })
+
         const result = await Portfolio.findByIdAndUpdate(
-            req.params._id, req.body, { new: true }
+            req.params._id, updatedData, { new: true }
             )
         res.status(200).json(result);
     } catch (error) {
