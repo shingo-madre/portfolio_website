@@ -3,15 +3,15 @@ const mongoose = require('mongoose')
 const path = require('path')
 const cors = require('cors')
 const routes = require('./routes/routes')
-const multer = require('multer')
 
 require('dotenv').config();
 
 const app = express()
 const port = 9000
 const mongoString = process.env.DATABASE_URL
+const localMongoString = process.env.LOCAL_DB_URL
 
-mongoose.connect(mongoString);
+mongoose.connect(localMongoString);
 const database = mongoose.connection
 
 database.on('error', (error) => {
@@ -29,7 +29,7 @@ app.use(express.json())
 app.use(express.static(__dirname + '/public'))
 app.use(cors())
 
-app.use('/api', routes);
+app.use('/', routes);
 
 app.listen(port, () => {
     console.log(`App is running on http://localhost:${port}`)
