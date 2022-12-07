@@ -47,6 +47,7 @@ router.post('/post',upload.single('image'), async (req, res) => {
 });
 
 router.post('/post-testimonial', upload.single('fileName'), async (req, res) => {
+    
     const data = new Testimonial({
         name: req.body.name,
         profession: req.body.profession,

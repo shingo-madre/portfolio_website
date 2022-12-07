@@ -11,7 +11,7 @@ const port = 9000
 const mongoString = process.env.DATABASE_URL
 const localMongoString = process.env.LOCAL_DB_URL
 
-mongoose.connect(localMongoString);
+mongoose.connect(mongoString);
 const database = mongoose.connection
 
 database.on('error', (error) => {
